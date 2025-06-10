@@ -1,6 +1,6 @@
 {
-  "name": "workerman/phpsocket.io",
-  "description": "A server side alternative implementation of socket.io in PHP based on Workerman",
+  "name": "hedali/phpsocket.io",
+  "description": "A server side alternative implementation of socket.io in PHP based on Workerman, Support Workerman V5 And PHP 8.2",
   "type": "library",
   "keywords": [
     "socket.io",
