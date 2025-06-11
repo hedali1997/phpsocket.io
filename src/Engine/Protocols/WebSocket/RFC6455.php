@@ -50,7 +50,7 @@ class RFC6455 implements ProtocolInterface
      *
      * @param string $buffer
      */
-    public static function input($buffer, ConnectionInterface $connection)
+    public static function input(string $buffer, ConnectionInterface $connection): int
     {
         // 数据长度
         $recv_len = strlen($buffer);
@@ -174,7 +174,7 @@ class RFC6455 implements ProtocolInterface
      * @param  string $buffer
      * @return string
      */
-    public static function encode($buffer, ConnectionInterface $connection)
+    public static function encode(mixed $buffer, ConnectionInterface $connection): string
     {
         $len = strlen($buffer);
         if (empty($connection->websocketHandshake)) {
@@ -212,7 +212,7 @@ class RFC6455 implements ProtocolInterface
      * @param  string $buffer
      * @return string
      */
-    public static function decode($buffer, ConnectionInterface $connection)
+    public static function decode(string $buffer, ConnectionInterface $connection): mixed
     {
         $masks = $data = $decoded = null;
         $len = ord($buffer[1]) & 127;
